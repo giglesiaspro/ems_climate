@@ -1,0 +1,10 @@
+DOMAIN = "ems"
+NAME = "Smart EMS"
+VERSION = "0.1.0"
+MANUFACTURER = "Giglesias"
+UPDATE_INTERVAL = 10
+LOGGER_NAME = "custom_components.ems"
+CONF_DEBUG = "debug"
+CONF_SIMULATION = "simulation"
+CONF_MODE = "mode"
+CONF_BATTERY_PERCENTAGE = "battery_percentage"

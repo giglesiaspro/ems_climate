@@ -1,0 +1,14 @@
+{
+  "domain": "ems",
+  "name": "Smart EMS",
+  "version": "0.1.0",
+  "documentation": "https://github.com/giglesiaspro/ems_climate",
+  "issue_tracker": "https://github.com/giglesiaspro/ems_climate/issues",
+  "requirements": [],
+  "codeowners": [
+    "@giglesiaspro"
+  ],
+  "iot_class": "local_polling",
+  "config_flow": true,
+  "integration_type": "hub"
+}
