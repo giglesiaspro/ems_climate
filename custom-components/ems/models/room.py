@@ -182,6 +182,16 @@ class Room:
 
         return self.delta(summer_mode) > self.hysteresis
 
+    def needs_cooling(self) -> bool:
+        return self.needs_climate(
+            summer_mode=True,
+        )
+
+    def needs_heating(self) -> bool:
+        return self.needs_climate(
+            summer_mode=False,
+        )
+
     ###########################################################################
     # Restricciones de arranque
     ###########################################################################
@@ -204,7 +214,7 @@ class Room:
             datetime.now() - self.last_start
         ) >= timedelta(seconds=self.minimum_on_time)
 
-###########################################################################
+    ###########################################################################
     # Aprendizaje de potencia
     ###########################################################################
 
@@ -348,11 +358,16 @@ class Room:
         self,
         minutes: float,
     ) -> None:
-        self.runtime_minutes += minutes
+        if minutes <= 0:
+            return
+        self.runtime_minutes += int(minutes)
+
     def add_energy(
         self,
         kwh: float,
     ) -> None:
+        if kwh <= 0:
+            return
         self.total_energy_kwh += kwh
 
     ###########################################################################
@@ -390,6 +405,10 @@ class Room:
             "starts": self.starts,
             "stops": self.stops,
             "runtime_minutes": self.runtime_minutes,
+            "total_energy_kwh": round(
+                self.total_energy_kwh,
+                3,
+            ),
             "planner_score": self.planner_score,
             "planner_reason": self.planner_reason,
         }

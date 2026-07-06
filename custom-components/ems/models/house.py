@@ -86,15 +86,11 @@ class House:
 
     @property
     def rooms_needing_climate(self) -> list[Room]:
-        result = []
-        for room in self.enabled_rooms:
-            if self.summer_mode:
-                if room.needs_cooling():
-                    result.append(room)
-            else:
-                if room.needs_heating():
-                    result.append(room)
-        return result
+        return [
+            room
+            for room in self.enabled_rooms
+            if room.needs_climate(self.summer_mode)
+        ]
 
     ###########################################################################
     # Potencias
