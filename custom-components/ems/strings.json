@@ -30,6 +30,15 @@
       "available_power": {
         "name": "Available climate power"
       },
+      "room_count": {
+        "name": "Room count"
+      },
+      "running_room_count": {
+        "name": "Running room count"
+      },
+      "rooms_needing_climate_count": {
+        "name": "Rooms needing climate count"
+      },
       "planner_reason": {
         "name": "Planner reason"
       }

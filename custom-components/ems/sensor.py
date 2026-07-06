@@ -80,6 +80,27 @@ SENSORS: tuple[EMSSensorDescription, ...] = (
         value_fn=lambda data: data.get("available_power"),
     ),
     EMSSensorDescription(
+        key="room_count",
+        translation_key="room_count",
+        name="Room Count",
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda data: data.get("room_count"),
+    ),
+    EMSSensorDescription(
+        key="running_room_count",
+        translation_key="running_room_count",
+        name="Running Room Count",
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda data: data.get("running_room_count"),
+    ),
+    EMSSensorDescription(
+        key="rooms_needing_climate_count",
+        translation_key="rooms_needing_climate_count",
+        name="Rooms Needing Climate Count",
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda data: data.get("rooms_needing_climate_count"),
+    ),
+    EMSSensorDescription(
         key="planner_reason",
         translation_key="planner_reason",
         name="Planner Reason",
@@ -131,6 +152,14 @@ class EMSSensor(CoordinatorEntity[EMSCoordinator], SensorEntity):
 
     @property
     def extra_state_attributes(self) -> dict[str, Any] | None:
+        if self.entity_description.key == "room_count":
+            data = self.coordinator.data or {}
+            house = data.get("house", {})
+
+            return {
+                "rooms": house.get("rooms", []),
+            }
+
         if self.entity_description.key != "planner_reason":
             return None
 

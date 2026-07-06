@@ -180,6 +180,9 @@ class Room:
         summer_mode: bool,
     ) -> bool:
 
+        if not self.available:
+            return False
+
         return self.delta(summer_mode) > self.hysteresis
 
     def needs_cooling(self) -> bool:

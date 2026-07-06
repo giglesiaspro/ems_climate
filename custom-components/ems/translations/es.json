@@ -30,6 +30,15 @@
       "available_power": {
         "name": "Potencia disponible climatización"
       },
+      "room_count": {
+        "name": "Habitaciones"
+      },
+      "running_room_count": {
+        "name": "Habitaciones encendidas"
+      },
+      "rooms_needing_climate_count": {
+        "name": "Habitaciones con demanda"
+      },
       "planner_reason": {
         "name": "Motivo del planner"
       }

@@ -231,6 +231,67 @@ ROOMS = (
     "cocina",
 )
 
+ROOM_DEFINITIONS = (
+    {
+        "id": "ppal",
+        "name": "Principal",
+        "priority": PRIORITY_HIGH,
+    },
+    {
+        "id": "irati",
+        "name": "Irati",
+        "priority": PRIORITY_NORMAL,
+    },
+    {
+        "id": "greta",
+        "name": "Greta",
+        "priority": PRIORITY_NORMAL,
+    },
+    {
+        "id": "bruno",
+        "name": "Bruno",
+        "priority": PRIORITY_NORMAL,
+    },
+    {
+        "id": "buhardilla",
+        "name": "Buhardilla",
+        "priority": PRIORITY_LOW,
+    },
+    {
+        "id": "salon",
+        "name": "Salon",
+        "priority": PRIORITY_HIGH,
+    },
+    {
+        "id": "cocina",
+        "name": "Cocina",
+        "priority": PRIORITY_LOW,
+    },
+)
+
+ROOM_TEMPERATURE_ENTITY_PATTERNS = (
+    "sensor.{room_id}_temperature",
+    "sensor.{room_id}_temperatura",
+    "sensor.temperature_{room_id}",
+    "sensor.temperatura_{room_id}",
+)
+
+ROOM_HUMIDITY_ENTITY_PATTERNS = (
+    "sensor.{room_id}_humidity",
+    "sensor.{room_id}_humedad",
+    "sensor.humidity_{room_id}",
+    "sensor.humedad_{room_id}",
+)
+
+ROOM_CONTACT_ENTITY_PATTERNS = (
+    "binary_sensor.{room_id}_contact",
+    "binary_sensor.{room_id}_contacto",
+    "binary_sensor.contact_{room_id}",
+    "binary_sensor.contacto_{room_id}",
+    "binary_sensor.{room_id}_climate_running",
+    "binary_sensor.{room_id}_aire_encendido",
+)
+
 ###############################################################################
 # DEBUG
 ###############################################################################
