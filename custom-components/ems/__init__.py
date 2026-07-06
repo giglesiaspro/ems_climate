@@ -1,5 +1,7 @@
 from homeassistant.config_entries import ConfigEntry
 
+from homeassistant.const import Platform
+
 from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN
@@ -7,11 +9,7 @@ from .const import DOMAIN
 from .coordinator import EMSCoordinator
 
 PLATFORMS = [
-    "sensor",
-    "switch",
-    "number",
-    "button",
-    "select",
+    Platform.SENSOR,
 ]
 
 

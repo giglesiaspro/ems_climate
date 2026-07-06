@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Smart Energy Manager",
+        "description": "Set up Smart EMS."
+      }
+    },
+    "abort": {
+      "already_configured": "Smart EMS is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pv_power": {
+        "name": "PV power"
+      },
+      "house_power": {
+        "name": "House power"
+      },
+      "grid_power": {
+        "name": "Grid power"
+      },
+      "battery_power": {
+        "name": "Battery power"
+      },
+      "battery_soc": {
+        "name": "Battery SOC"
+      },
+      "available_power": {
+        "name": "Available climate power"
+      },
+      "planner_reason": {
+        "name": "Planner reason"
+      }
+    }
+  }
+}
